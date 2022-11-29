@@ -31,7 +31,7 @@ public class CarController : Agent
         float actionSteering = actionTaken[1]; // [-1, +1]
 
         transform.Translate(actionSpeed * Vector3.forward * speed * Time.fixedDeltaTime);
-        transform.rotation = Quaternion.Euler(new Vector3(0, actionSteering * 60, 0));
+        transform.rotation = Quaternion.Euler(new Vector3(0, actionSteering * 90, 0));
     }
 
     public override void Heuristic(in ActionBuffers actionsOut)

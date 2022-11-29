@@ -1,0 +1,42 @@
+{
+    "name": "root",
+    "metadata": {
+        "timer_format_version": "0.1.0",
+        "start_time_seconds": "1669731343",
+        "python_version": "3.7.15 (default, Nov 24 2022, 18:44:54) [MSC v.1916 64 bit (AMD64)]",
+        "command_line_arguments": "C:\\Users\\vmark\\anaconda3\\envs\\unity4\\Scripts\\mlagents-learn .\\RacingCar.yaml --run-id=Run 1129 v1",
+        "mlagents_version": "0.28.0",
+        "mlagents_envs_version": "0.28.0",
+        "communication_protocol_version": "1.5.0",
+        "pytorch_version": "1.7.1+cpu",
+        "numpy_version": "1.21.6",
+        "end_time_seconds": "1669731405"
+    },
+    "total": 61.8093865,
+    "count": 1,
+    "self": 0.02049170000000089,
+    "children": {
+        "run_training.setup": {
+            "total": 0.21609100000000003,
+            "count": 1,
+            "self": 0.21609100000000003
+        },
+        "TrainerController.start_learning": {
+            "total": 61.5728038,
+            "count": 1,
+            "self": 0.0001727999999872054,
+            "children": {
+                "TrainerController._reset_env": {
+                    "total": 61.57260740000001,
+                    "count": 1,
+                    "self": 61.57260740000001
+                },
+                "TrainerController._save_models": {
+                    "total": 2.360000000578566e-05,
+                    "count": 1,
+                    "self": 2.360000000578566e-05
+                }
+            }
+        }
+    }
+}
