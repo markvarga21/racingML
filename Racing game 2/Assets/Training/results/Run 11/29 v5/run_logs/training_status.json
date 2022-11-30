@@ -1,0 +1,47 @@
+{
+    "RacingCar": {
+        "checkpoints": [
+            {
+                "steps": 499990,
+                "file_path": "results\\Run 11/29 v5\\RacingCar\\RacingCar-499990.onnx",
+                "reward": -0.4207189079454049,
+                "creation_time": 1669747157.320102,
+                "auxillary_file_paths": [
+                    "results\\Run 11/29 v5\\RacingCar\\RacingCar-499990.pt"
+                ]
+            },
+            {
+                "steps": 999998,
+                "file_path": "results\\Run 11/29 v5\\RacingCar\\RacingCar-999998.onnx",
+                "reward": -0.1942436170067334,
+                "creation_time": 1669748016.2653208,
+                "auxillary_file_paths": [
+                    "results\\Run 11/29 v5\\RacingCar\\RacingCar-999998.pt"
+                ]
+            },
+            {
+                "steps": 1369355,
+                "file_path": "results\\Run 11/29 v5\\RacingCar\\RacingCar-1369355.onnx",
+                "reward": -0.11909088675271381,
+                "creation_time": 1669748562.941347,
+                "auxillary_file_paths": [
+                    "results\\Run 11/29 v5\\RacingCar\\RacingCar-1369355.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 1369355,
+            "file_path": "results\\Run 11/29 v5\\RacingCar.onnx",
+            "reward": -0.11909088675271381,
+            "creation_time": 1669748562.941347,
+            "auxillary_file_paths": [
+                "results\\Run 11/29 v5\\RacingCar\\RacingCar-1369355.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.28.0",
+        "torch_version": "1.7.1+cu110"
+    }
+}

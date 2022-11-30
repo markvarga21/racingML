@@ -1,0 +1,29 @@
+{
+    "RacingCar": {
+        "checkpoints": [
+            {
+                "steps": 249633,
+                "file_path": "results\\Run 11/29 v11\\RacingCar\\RacingCar-249633.onnx",
+                "reward": -0.11656344597784359,
+                "creation_time": 1669751583.5570548,
+                "auxillary_file_paths": [
+                    "results\\Run 11/29 v11\\RacingCar\\RacingCar-249633.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 249633,
+            "file_path": "results\\Run 11/29 v11\\RacingCar.onnx",
+            "reward": -0.11656344597784359,
+            "creation_time": 1669751583.5570548,
+            "auxillary_file_paths": [
+                "results\\Run 11/29 v11\\RacingCar\\RacingCar-249633.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.28.0",
+        "torch_version": "1.7.1+cu110"
+    }
+}

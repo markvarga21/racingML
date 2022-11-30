@@ -399,6 +399,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Environment (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 4069933318976658500, guid: 6edffd85e2bfeb24e9e2e6eace897a55, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 13.9087715
+      objectReference: {fileID: 0}
     - target: {fileID: 6440843642697815882, guid: 6edffd85e2bfeb24e9e2e6eace897a55, type: 3}
       propertyPath: m_RootOrder
       value: 4

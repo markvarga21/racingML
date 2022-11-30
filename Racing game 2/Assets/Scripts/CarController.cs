@@ -4,6 +4,7 @@ using UnityEngine;
 using Unity.MLAgents;
 using Unity.MLAgents.Actuators;
 using Unity.MLAgents.Sensors;
+using System;
 
 public class CarController : Agent
 {
@@ -20,7 +21,21 @@ public class CarController : Agent
     public override void CollectObservations(VectorSensor sensor)
     {
         sensor.AddObservation(transform.localPosition.x);
-        sensor.AddObservation(transform.localPosition.y);
+        sensor.AddObservation(transform.localPosition.z);
+
+        GameObject[] gameObjects = GameObject.FindGameObjectsWithTag("UnreachedCheckpoint");
+        float min = 9999999;
+        float[] distance = new float[gameObjects.Length];
+        for (int i = 0; i < gameObjects.Length; i++) {
+            float dist = Vector3.Distance(gameObjects[i].transform.localPosition, transform.localPosition);
+            distance[i] = dist;
+            if (dist < min) {
+                min = dist;
+            }
+        }
+        int index = Array.IndexOf(distance, min);
+        sensor.AddObservation(gameObjects[index].transform.localPosition.z);
+        sensor.AddObservation(gameObjects[index].transform.localPosition.x);
     }
 
     public override void OnActionReceived(ActionBuffers actions)
@@ -31,7 +46,7 @@ public class CarController : Agent
         float actionSteering = actionTaken[1]; // [-1, +1]
 
         transform.Translate(actionSpeed * Vector3.forward * speed * Time.fixedDeltaTime);
-        transform.rotation = Quaternion.Euler(new Vector3(0, actionSteering * 90, 0));
+        transform.rotation = Quaternion.Euler(new Vector3(0, actionSteering * 180, 0));
     }
 
     public override void Heuristic(in ActionBuffers actionsOut)
@@ -78,7 +93,7 @@ public class CarController : Agent
         }
         if (other.gameObject.tag == "Finish")
         {
-            AddReward(+1);
+            //AddReward(+1);
             ClearTags();
         }
         if (other.gameObject.tag == "UnreachedCheckpoint")
