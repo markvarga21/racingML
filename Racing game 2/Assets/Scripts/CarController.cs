@@ -20,22 +20,7 @@ public class CarController : Agent
 
     public override void CollectObservations(VectorSensor sensor)
     {
-        sensor.AddObservation(transform.localPosition.x);
-        sensor.AddObservation(transform.localPosition.z);
 
-        GameObject[] gameObjects = GameObject.FindGameObjectsWithTag("UnreachedCheckpoint");
-        float min = 9999999;
-        float[] distance = new float[gameObjects.Length];
-        for (int i = 0; i < gameObjects.Length; i++) {
-            float dist = Vector3.Distance(gameObjects[i].transform.localPosition, transform.localPosition);
-            distance[i] = dist;
-            if (dist < min) {
-                min = dist;
-            }
-        }
-        int index = Array.IndexOf(distance, min);
-        sensor.AddObservation(gameObjects[index].transform.localPosition.z);
-        sensor.AddObservation(gameObjects[index].transform.localPosition.x);
     }
 
     public override void OnActionReceived(ActionBuffers actions)
@@ -46,7 +31,7 @@ public class CarController : Agent
         float actionSteering = actionTaken[1]; // [-1, +1]
 
         transform.Translate(actionSpeed * Vector3.forward * speed * Time.fixedDeltaTime);
-        transform.rotation = Quaternion.Euler(new Vector3(0, actionSteering * 180, 0));
+        transform.rotation = Quaternion.Euler(new Vector3(0, actionSteering * 90, 0));
     }
 
     public override void Heuristic(in ActionBuffers actionsOut)
@@ -66,23 +51,6 @@ public class CarController : Agent
             actions[1] = -0.5f;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKey("w"))
-        {
-            this.transform.Translate(Vector3.forward * speed * Time.deltaTime);
-        }
-        if (Input.GetKey("a"))
-        {
-            transform.Rotate(0.0f, -0.5f, 0.0f);
-        }
-        if (Input.GetKey("d"))
-        {
-            transform.Rotate(0.0f, +0.5f, 0.0f);
-        }
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Wall")
@@ -93,8 +61,8 @@ public class CarController : Agent
         }
         if (other.gameObject.tag == "Finish")
         {
-            //AddReward(+1);
-            ClearTags();
+            AddReward(+1);
+            EndEpisode();
         }
         if (other.gameObject.tag == "UnreachedCheckpoint")
         {
@@ -108,9 +76,5 @@ public class CarController : Agent
         for (int i = 0; i < gameObjects.Length; i++) {
             gameObjects[i].tag = "UnreachedCheckpoint";
         }
-    }
-
-    private void Start()
-    {
     }
 }
