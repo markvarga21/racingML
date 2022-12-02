@@ -1,0 +1,65 @@
+{
+    "RacingCar": {
+        "checkpoints": [
+            {
+                "steps": 1499982,
+                "file_path": "results\\Run 12/2 v3\\RacingCar\\RacingCar-1499982.onnx",
+                "reward": 0.8103286845373435,
+                "creation_time": 1669973936.8649063,
+                "auxillary_file_paths": [
+                    "results\\Run 12/2 v3\\RacingCar\\RacingCar-1499982.pt"
+                ]
+            },
+            {
+                "steps": 1999985,
+                "file_path": "results\\Run 12/2 v3\\RacingCar\\RacingCar-1999985.onnx",
+                "reward": 2.032926890181332,
+                "creation_time": 1669974508.7847517,
+                "auxillary_file_paths": [
+                    "results\\Run 12/2 v3\\RacingCar\\RacingCar-1999985.pt"
+                ]
+            },
+            {
+                "steps": 2499988,
+                "file_path": "results\\Run 12/2 v3\\RacingCar\\RacingCar-2499988.onnx",
+                "reward": 2.0369231222913817,
+                "creation_time": 1669975308.0785418,
+                "auxillary_file_paths": [
+                    "results\\Run 12/2 v3\\RacingCar\\RacingCar-2499988.pt"
+                ]
+            },
+            {
+                "steps": 2999986,
+                "file_path": "results\\Run 12/2 v3\\RacingCar\\RacingCar-2999986.onnx",
+                "reward": 2.6270270859067506,
+                "creation_time": 1669975967.5514681,
+                "auxillary_file_paths": [
+                    "results\\Run 12/2 v3\\RacingCar\\RacingCar-2999986.pt"
+                ]
+            },
+            {
+                "steps": 3343237,
+                "file_path": "results\\Run 12/2 v3\\RacingCar\\RacingCar-3343237.onnx",
+                "reward": 3.652500080317259,
+                "creation_time": 1669976524.9244266,
+                "auxillary_file_paths": [
+                    "results\\Run 12/2 v3\\RacingCar\\RacingCar-3343237.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 3343237,
+            "file_path": "results\\Run 12/2 v3\\RacingCar.onnx",
+            "reward": 3.652500080317259,
+            "creation_time": 1669976524.9244266,
+            "auxillary_file_paths": [
+                "results\\Run 12/2 v3\\RacingCar\\RacingCar-3343237.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.28.0",
+        "torch_version": "1.7.1+cu110"
+    }
+}
